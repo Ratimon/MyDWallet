@@ -11,11 +11,18 @@ module.exports = webpackMerge(commonConfig, {
   devtool: 'source-map',
 
   output: {
-    path: path.resolve(__dirname, '../src/app/dist'),
+    path: path.resolve(__dirname, '../build'),
     publicPath: '/',
     filename: '[name].[hash].js',
     chunkFilename: '[id].[hash].chunk.js'
   },
+
+  //   output: {
+  //   path: path.resolve(__dirname, '../src/app/dist'),
+  //   publicPath: '/',
+  //   filename: '[name].[hash].js',
+  //   chunkFilename: '[id].[hash].chunk.js'
+  // },
 
   plugins: [
     new webpack.NoEmitOnErrorsPlugin(),
