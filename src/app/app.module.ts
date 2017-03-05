@@ -9,7 +9,7 @@ import { HistoryComponent } from './history/history.component';
 
 import {RouterModule} from "@angular/router"
 import {routes} from "./routes";
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+// import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -24,7 +24,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     FormsModule,
     HttpModule,
-    NgbModule,
+    // NgbModule.forRoot(),
     RouterModule.forRoot(routes, {useHash: true})
   ],
   providers: [],
