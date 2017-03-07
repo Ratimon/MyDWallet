@@ -1,0 +1,48 @@
+<h1>Deposit {{ss.name}}</h1>
+<form novalidate
+      [formGroup]="myform"
+      (ngSubmit)="onSubmit()">
+
+
+
+  <div class="form-group"
+       [ngClass]="{
+        'has-danger': etherAmount.invalid && (etherAmount.dirty || etherAmount.touched),
+        'has-success': etherAmount.valid && (etherAmount.dirty || etherAmount.touched)
+   }">
+    <label>Amount of Ether</label>
+    <input  type="number" step="any"
+           class="form-control"
+           formControlName="etherAmount"
+           required>
+    <div class="form-control-feedback"
+         *ngIf="etherAmount.errors && (etherAmount.dirty || etherAmount.touched)">
+        <p *ngIf="etherAmount.errors.required">The amount is required or must be number</p>
+    </div>
+  </div>
+
+  <!--
+    <pre>{{ addressFrom.errors | json }}</pre>
+  -->
+
+  <div class="form-group"
+       [ngClass]="{
+        'has-danger': addressFrom.invalid && (addressFrom.dirty || addressFrom.touched),
+        'has-success': addressFrom.valid && (addressFrom.dirty || addressFrom.touched)
+      }">
+    <label>Address From</label>
+    <select class="form-control"
+            formControlName="addressFrom">
+      <option value="">Please select an Address From</option>
+      <option *ngFor="let address of addresses"
+              [value]="address">{{address}}
+      </option>
+    </select>
+  </div>
+
+  <button type="submit"
+          class="btn btn-primary">Submit
+  </button>
+
+  <pre>{{myform.value | json}}</pre>
+</form>

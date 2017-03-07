@@ -7,6 +7,7 @@ const ProvidePlugin = require('webpack/lib/ProvidePlugin');
 
 module.exports = {
   entry: {
+    // 'web3' : './sec/assets/js/web3.js',
     'polyfills': './src/polyfills.ts',
     'vendor': './src/vendor.ts',
     'app': './src/main.ts',
@@ -20,6 +21,11 @@ module.exports = {
 
   module: {
     rules: [
+      //  {
+      //   test: /\.js$/,
+      //   use: 'babel-loader',
+      //   exclude: /node_modules/
+      // },
       {
         test: /\.ts$/,
         loaders: [

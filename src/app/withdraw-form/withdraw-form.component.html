@@ -1,0 +1,61 @@
+<h1>Withdraw</h1>
+<form novalidate
+      [formGroup]="myform"
+      (ngSubmit)="onSubmit()">
+
+
+
+  <div class="form-group"
+       [ngClass]="{
+        'has-danger': etherAmount.invalid && (etherAmount.dirty || etherAmount.touched),
+        'has-success': etherAmount.valid && (etherAmount.dirty || etherAmount.touched)
+   }">
+    <label>Amount of Ether</label>
+    <input  type="number" step="any"
+           class="form-control"
+           formControlName="etherAmount"
+           required>
+    <div class="form-control-feedback"
+         *ngIf="etherAmount.errors && (etherAmount.dirty || etherAmount.touched)">
+      <p *ngIf="etherAmount.errors.required">The amount is required or must be number</p>
+    </div>
+  </div>
+
+  <!--
+    <pre>{{ addressTo.errors | json }}</pre>
+  -->
+
+  <div class="form-group"
+       [ngClass]="{
+        'has-danger': addressTo.invalid && (addressTo.dirty || addressTo.touched),
+        'has-success': addressTo.valid && (addressTo.dirty || addressTo.touched)
+      }">
+    <label>Address To</label>
+
+    <input type="addressTo"
+         class="form-control"
+         formControlName="addressTo"
+         required
+         maxlength="42">
+    <div class="form-control-feedback"
+         *ngIf="addressTo.errors && (addressTo.dirty || addressTo.touched)">
+      <p *ngIf="addressTo.errors.required">Address is required</p>
+      <p *ngIf="addressTo.errors.minlength">Address must be 42 characters long, we need another {{addressTo.errors.minlength.requiredLength - addressTo.errors.minlength.actualLength}} characters </p>
+
+    </div>
+
+    <!-- <select class="form-control"
+            formControlName="addressTo">
+      <option value="">Please select an Address To</option>
+      <option *ngFor="let address of addresses"
+              [value]="address">{{address}}
+      </option>
+    </select> -->
+  </div>
+
+  <button type="submit"
+          class="btn btn-primary">Submit
+  </button>
+
+  <pre>{{myform.value | json}}</pre>
+</form>

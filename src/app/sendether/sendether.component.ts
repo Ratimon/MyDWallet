@@ -3,11 +3,11 @@ import {SharedService} from '../service/shared.service'
 
 
 @Component({
-  selector: 'app-history',
-  templateUrl: './history.component.html',
-  styleUrls: ['./history.component.css']
+  selector: 'app-sendether',
+  templateUrl: './sendether.component.html',
+  styleUrls: ['./sendether.component.css']
 })
-export class HistoryComponent implements OnInit {
+export class SendetherComponent implements OnInit {
 
   constructor(private ss: SharedService) { }
 

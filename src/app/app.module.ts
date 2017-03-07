@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,  ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -9,8 +9,11 @@ import { HistoryComponent } from './history/history.component';
 
 import {RouterModule} from "@angular/router"
 import {routes} from "./routes";
-// import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { SendetherComponent } from './sendether/sendether.component';
+import { DepositFormComponent } from './deposit-form/deposit-form.component';
+import { WithdrawFormComponent } from './withdraw-form/withdraw-form.component';
 
+import {SharedService} from './service/shared.service'
 
 
 
@@ -18,16 +21,19 @@ import {routes} from "./routes";
   declarations: [
     AppComponent,
     HomeComponent,
-    HistoryComponent
+    HistoryComponent,
+    SendetherComponent,
+    DepositFormComponent,
+    WithdrawFormComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
-    // NgbModule.forRoot(),
     RouterModule.forRoot(routes, {useHash: true})
   ],
-  providers: [],
+  providers: [SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
