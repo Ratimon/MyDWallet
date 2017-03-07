@@ -15,6 +15,10 @@ module.exports = {
     // 'main':  AOT ? './client/main.browser.aot.ts' :'./client/main.browser.ts'
   },
 
+  // web3Loader: {
+  //   provider: 'http://localhost:8545'
+  // },
+
   resolve: {
     extensions: ['.ts', '.js']
   },
@@ -25,6 +29,10 @@ module.exports = {
       //   test: /\.js$/,
       //   use: 'babel-loader',
       //   exclude: /node_modules/
+      // },
+      // {
+      //   test: /\.sol$/,
+      //   loaders: ['web3', 'solc']
       // },
       {
         test: /\.ts$/,

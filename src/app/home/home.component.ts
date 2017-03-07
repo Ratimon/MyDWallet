@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {SharedService} from '../service/shared.service'
 
 @Component({
-  selector: 'app-home',
+  selector: 'home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })

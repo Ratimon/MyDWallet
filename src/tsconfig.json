@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": "",
-    "declaration": false,
+    "declaration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "lib": [
@@ -14,10 +14,12 @@
     "outDir": "../dist/out-tsc",
     "sourceMap": true,
     "target": "es5",
+    "allowJs": true,
     "typeRoots": [
       "../node_modules/@types"
     ],
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true
   }
+
 }

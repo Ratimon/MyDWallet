@@ -7,7 +7,7 @@
     "ng": "ng",
     "start": "ng serve",
     "startd": "webpack-dev-server --inline --progress --port 8080",
-    "build": "rimraf build && webpack --config config/webpack.prod.js --progress --profile --bail",
+    "build": "rimraf build && webpack --config config/webpack.prod.js --progress --profile ",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -16,7 +16,7 @@
   "dependencies": {
     "@angular/common": "^2.4.0",
     "@angular/compiler": "^2.4.0",
-    "@angular/core": "^2.4.0",
+    "@angular/core": "^2.4.9",
     "@angular/forms": "^2.4.0",
     "@angular/http": "^2.4.0",
     "@angular/platform-browser": "^2.4.0",

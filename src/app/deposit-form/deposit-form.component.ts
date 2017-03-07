@@ -3,6 +3,7 @@ import {ReactiveFormsModule,FormsModule,FormGroup,FormControl,Validators, FormBu
 import {BrowserModule} from '@angular/platform-browser';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {SharedService} from '../service/shared.service'
+import web3 = require('../globals')
 
 @Component({
   selector: 'deposit-form',
@@ -24,7 +25,11 @@ export class DepositFormComponent implements OnInit {
 
   constructor(private ss: SharedService) {
 
-    ss.name = '2'
+    var that: any = 'eth'
+    var that2: any = 'accounts'
+
+    // ss.name = '2'
+    // ss.accounts = web3[that][that2];
 
   }
 
