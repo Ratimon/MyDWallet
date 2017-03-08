@@ -2,11 +2,8 @@ import { Component, Pipe, Input, OnInit } from '@angular/core';
 import {ReactiveFormsModule,FormsModule,FormGroup,FormControl,Validators, FormBuilder} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
-import {SharedService} from '../service/shared.service'
-import myGlobals = require('../globals');
-// import {myGlobals} from '../globals';
-// import {web3}  from '../../../contracts/SimpleWallet.sol'
-
+import {SharedService} from '../service/shared.service';
+import * as myGlobals from '../globals'
 
 @Component({
   selector: 'deposit-form',

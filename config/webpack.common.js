@@ -6,7 +6,6 @@ var helpers = require('./helpers');
 const ProvidePlugin = require('webpack/lib/ProvidePlugin'); 
 
 module.exports = {
-
   entry: {
     // 'web3' : './src/assets/js/web3.js',
     'polyfills': './src/polyfills.ts',
@@ -16,14 +15,8 @@ module.exports = {
     // 'main':  AOT ? './client/main.browser.aot.ts' :'./client/main.browser.ts'
   },
 
-  //   web3Loader: {
-  //   // Web3
-  //   provider: 'http://localhost:8545'
-  // },
-
-
   resolve: {
-    extensions: ['.ts', '.js'],
+    extensions: ['.ts', '.js']
   },
 
   module: {
@@ -33,20 +26,6 @@ module.exports = {
       //   use: 'babel-loader',
       //   exclude: /node_modules/
       // },
-      // {
-      //     test: /\.js$/,
-      //     loader: 'source-map-loader',
-      //     exclude: [
-      //         // These packages have problems with their source maps;
-      //         rootPath('node_modules/@angular'),
-      //         rootPath('node_modules/@ngrx'),
-      //         rootPath('node_modules/rxjs'),
-      //     ]
-      // },
-      {
-        test: /\.sol$/,
-        loaders: ['web3']
-      },
       {
         test: /\.ts$/,
         loaders: [

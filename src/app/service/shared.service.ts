@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 export class SharedService {
 
   name:string="test"
-  accounts:string[]
+  accounts:any
 
   constructor() {
     
