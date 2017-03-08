@@ -2,6 +2,7 @@
   "compilerOptions": {
     "baseUrl": "",
     "declaration": false,
+    "declarationDir": null,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "lib": [
@@ -17,6 +18,8 @@
     "typeRoots": [
       "../node_modules/@types"
     ],
+    "allowJs": true,
+    "inlineSources": true,
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true
   }
