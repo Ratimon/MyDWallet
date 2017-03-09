@@ -3,6 +3,7 @@ import {ReactiveFormsModule,FormsModule,FormGroup,FormControl,Validators, FormBu
 import {BrowserModule} from '@angular/platform-browser';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {SharedService} from '../service/shared.service'
+import * as myGlobals from '../globals'
 
 
 
@@ -13,15 +14,12 @@ import {SharedService} from '../service/shared.service'
 })
 export class WithdrawFormComponent implements OnInit {
 
- addresses: string[] = [
-    '1',
-    '2',
-    '3',
-  ];
+  addresses: string[]
   myform: FormGroup;
   etherAmount: FormControl;
   addressTo: FormControl;
-
+  public transfer_success: boolean = false;
+  public has_errors: string = "";
 
   constructor(private ss: SharedService) {
 
@@ -53,6 +51,23 @@ export class WithdrawFormComponent implements OnInit {
   onSubmit() {
     if (this.myform.valid) {
       console.log("Form Submitted!");
+
+      var that = this;
+      myGlobals.SimpleWallet.deployed().then(function(contract:any) {
+
+      console.log(that.myform.value.etherAmount)
+      console.log(that.myform.value.addressTo)
+
+      contract.sendFunds(myGlobals.web3.toWei(that.myform.value.etherAmount, "ether"), that.myform.value.addressTo, {from: myGlobals.web3.eth.accounts[0], gas: 200000}).then(function () {
+          that.transfer_success = true;
+
+      }).catch(function (error:any) {
+          console.error(error);
+          that.has_errors = `${error}`;
+
+      });
+     });
+
       this.myform.reset();
     }
   }

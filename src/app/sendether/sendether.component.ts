@@ -3,7 +3,7 @@ import {SharedService} from '../service/shared.service'
 
 
 @Component({
-  selector: 'app-sendether',
+  selector: 'sendether',
   templateUrl: './sendether.component.html',
   styleUrls: ['./sendether.component.css']
 })

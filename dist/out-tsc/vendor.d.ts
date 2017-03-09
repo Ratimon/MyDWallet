@@ -10,3 +10,6 @@ import 'rxjs';
 import 'core-js';
 import 'zone.js';
 import 'web3';
+import "lodash";
+import "truffle-contract";
+import "json-loader";

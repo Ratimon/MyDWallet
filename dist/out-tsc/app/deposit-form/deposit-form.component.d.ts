@@ -7,6 +7,9 @@ export declare class DepositFormComponent implements OnInit {
     myform: FormGroup;
     etherAmount: FormControl;
     addressFrom: FormControl;
+    transfer_success: boolean;
+    has_errors: string;
+    SimpleContract: any;
     constructor(ss: SharedService);
     ngOnInit(): void;
     createFormControls(): void;

@@ -10,7 +10,7 @@ import {SharedService} from './service/shared.service'
   providers: [SharedService]
 })
 export class AppComponent {
-  title = 'app works!';
+  // title = 'app works!';
 }
 
 // bootstrap

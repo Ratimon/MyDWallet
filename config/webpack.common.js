@@ -2,6 +2,7 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var helpers = require('./helpers');
+var path = require('path');
 
 const ProvidePlugin = require('webpack/lib/ProvidePlugin'); 
 
@@ -26,6 +27,19 @@ module.exports = {
       //   use: 'babel-loader',
       //   exclude: /node_modules/
       // },
+
+      // {
+      //   test: /\.sol/,
+      //   use: [
+      //     { loader: 'json-loader' },
+      //     { loader: 'truffle-solidity-loader',
+      //       options: {
+      //         migrations_directory: path.resolve(__dirname, './migrations')
+      //         // network: 'development'
+      //       }
+      //     }
+      //   ]
+      // },
       {
         test: /\.ts$/,
         loaders: [
@@ -34,6 +48,10 @@ module.exports = {
             options: { configFileName: helpers.root('src', 'tsconfig.json') }
           } , 'angular2-template-loader'
         ]
+      },
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
       },
       {
         test: /\.html$/,

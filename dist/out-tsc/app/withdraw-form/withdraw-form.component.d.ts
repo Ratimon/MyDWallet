@@ -7,6 +7,8 @@ export declare class WithdrawFormComponent implements OnInit {
     myform: FormGroup;
     etherAmount: FormControl;
     addressTo: FormControl;
+    transfer_success: boolean;
+    has_errors: string;
     constructor(ss: SharedService);
     ngOnInit(): void;
     createFormControls(): void;

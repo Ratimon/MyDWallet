@@ -9,7 +9,9 @@ import {SharedService} from '../service/shared.service'
 })
 export class HistoryComponent implements OnInit {
 
-  constructor(private ss: SharedService) { }
+  constructor(private ss: SharedService) {
+    
+  }
 
   ngOnInit() {
   }

@@ -1,48 +1,63 @@
-<h1>Deposit {{ss.name}} {{ss.accounts}}</h1>
-<form novalidate
-      [formGroup]="myform"
-      (ngSubmit)="onSubmit()">
+ <div *ngIf="transfer_success == false && has_errors.length == 0" >
+  <h1>Deposit {{ss.name}}</h1>
+  <form novalidate
+        [formGroup]="myform"
+        (ngSubmit)="onSubmit()">
 
 
 
-  <div class="form-group"
-       [ngClass]="{
-        'has-danger': etherAmount.invalid && (etherAmount.dirty || etherAmount.touched),
-        'has-success': etherAmount.valid && (etherAmount.dirty || etherAmount.touched)
-   }">
-    <label>Amount of Ether</label>
-    <input  type="number" step="any"
-           class="form-control"
-           formControlName="etherAmount"
-           required>
-    <div class="form-control-feedback"
-         *ngIf="etherAmount.errors && (etherAmount.dirty || etherAmount.touched)">
-        <p *ngIf="etherAmount.errors.required">The amount is required or must be number</p>
+    <div class="form-group"
+        [ngClass]="{
+          'has-danger': etherAmount.invalid && (etherAmount.dirty || etherAmount.touched),
+          'has-success': etherAmount.valid && (etherAmount.dirty || etherAmount.touched)
+    }">
+      <label>Amount of Ether</label>
+      <input  type="number" step="any"
+            class="form-control"
+            formControlName="etherAmount"
+            required>
+      <div class="form-control-feedback"
+          *ngIf="etherAmount.errors && (etherAmount.dirty || etherAmount.touched)">
+          <p *ngIf="etherAmount.errors.required">The amount is required or must be number</p>
+      </div>
     </div>
-  </div>
 
-  <!--
-    <pre>{{ addressFrom.errors | json }}</pre>
-  -->
+    <!--
+      <pre>{{ addressFrom.errors | json }}</pre>
+    -->
 
-  <div class="form-group"
-       [ngClass]="{
-        'has-danger': addressFrom.invalid && (addressFrom.dirty || addressFrom.touched),
-        'has-success': addressFrom.valid && (addressFrom.dirty || addressFrom.touched)
-      }">
-    <label>Address From</label>
-    <select class="form-control"
-            formControlName="addressFrom">
-      <option value="">Please select an Address From</option>
-      <option *ngFor="let address of addresses"
-              [value]="address">{{address}}
-      </option>
-    </select>
-  </div>
+    <div class="form-group"
+        [ngClass]="{
+          'has-danger': addressFrom.invalid && (addressFrom.dirty || addressFrom.touched),
+          'has-success': addressFrom.valid && (addressFrom.dirty || addressFrom.touched)
+        }">
+      <label>Address From</label>
+      <select class="form-control"
+              formControlName="addressFrom">
+        <option value="">Please select an Address From</option>
+        <option *ngFor="let address of addresses"
+                [value]="address">{{address}}
+        </option>
+      </select>
+    </div>
 
-  <button type="submit"
-          class="btn btn-primary">Submit
-  </button>
+    <button type="submit"
+            class="btn btn-primary">Submit
+    </button>
 
-  <pre>{{myform.value | json}}</pre>
-</form>
+    <!--<pre>{{myform.value |json}} {{myform.value.etherAmount}} {{myform.value.addressFrom}}</pre>-->
+  </form>
+ </div>
+
+ <div *ngIf="transfer_success == true">
+    <div class="alert alert-success" role="alert">Success</div>
+</div>
+<div *ngIf="has_errors > 0">
+    <div class="alert alert-error" role="alert">{{has_errors}}</div>
+</div>
+
+<!--<a class="btn btn-primary" (click)="transfer_success = true">success
+</a>
+
+<a class="btn btn-primary" (click)="has_errors ='1'">error
+</a>-->
