@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {SharedService} from '../service/shared.service'
+import {SharedService} from '../service/shared.service';
+import * as myGlobals from '../globals'
+
 
 
 @Component({
@@ -9,9 +11,15 @@ import {SharedService} from '../service/shared.service'
 })
 export class SendetherComponent implements OnInit {
 
-  constructor(private ss: SharedService) { }
+  addresses: string[] = this.ss.accounts
+
+  constructor(private ss: SharedService) {
+    ss.accounts = myGlobals.web3.eth.accounts
+  }
 
   ngOnInit() {
+
+    this.addresses = this.ss.accounts
   }
 
 }

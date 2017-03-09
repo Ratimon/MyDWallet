@@ -1,9 +1,9 @@
-<p>
+<!--<p>
   history works!
-</p>
+</p>-->
 
-<!--<h1>All Events</h1>
-<div ng-repeat = "event in ourEvents">
+<h1>All Events</h1>
+<div *ngFor = "let event of ourEvents">
     Name: {{event.event}}
     Amount: {{event.args.amount}}
 </div>
@@ -12,7 +12,7 @@
     <div class="col-lg-6">
 
         <h1>Deposits</h1>
-        <div ng-repeat = "event in ourDepositEvents">
+        <div *ngFor = "let event of ourDepositEvents">
             Name: {{event.event}}
             Amount: {{event.args.amount}}
         </div>
@@ -20,9 +20,9 @@
     <div class="col-lg-6">
 
         <h1>Withdrawls</h1>
-        <div ng-repeat="withdrawl in withdrawls">
+        <div *ngFor="let withdrawl of withdrawls">
             To: {{withdrawl[0]}}<br />
             Amount in Ether: {{withdrawl[1]}}
 
         </div>
-    </div>-->
+    </div>

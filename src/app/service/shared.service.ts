@@ -12,6 +12,10 @@ export class SharedService {
 
   contract_address:string
   contract_abi:any
+
+  ourEvents:any[];
+  ourDepositEvents:any[];
+  withdrawls:any[];
   
 
   constructor() {

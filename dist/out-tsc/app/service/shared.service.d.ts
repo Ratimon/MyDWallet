@@ -5,5 +5,8 @@ export declare class SharedService {
     balanceInEther: number;
     contract_address: string;
     contract_abi: any;
+    ourEvents: any[];
+    ourDepositEvents: any[];
+    withdrawls: any[];
     constructor();
 }
