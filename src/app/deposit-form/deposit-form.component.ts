@@ -28,7 +28,6 @@ export class DepositFormComponent implements OnInit {
 
   constructor(private ss: SharedService) {
 
-    ss.name = 'Test for scope'
     ss.accounts = myGlobals.web3.eth.accounts
     // ss.depositFunds = function(adrress :string, amount:number) {
 
@@ -70,11 +69,13 @@ export class DepositFormComponent implements OnInit {
       console.log("Form Submitted!");
 
       var that = this;
+      console.log(that);
       // var myform = this.myform;
       myGlobals.SimpleWallet.deployed().then(function(contract :any) {
 
         console.log(contract.address);
         console.log(that.myform.value.addressFrom);
+        console.log(myGlobals.web3.toWei(that.myform.value.etherAmount, "ether"));
   
         var addressStore = contract.address
 
@@ -88,19 +89,10 @@ export class DepositFormComponent implements OnInit {
         });   
       })
 
-      // var contract = myGlobals.SimpleWallet.deployed();
-
-      // myGlobals.web3.eth.sendTransaction({from: this.addressFrom, to: contract.address, value: myGlobals.web3.toWei(this.etherAmount, "ether")}, function(error:any, result:any) {
-      //           if(error) {
-      //               this.has_errors = "I did not work";
-      //           } else {
-      //               this.transfer_success = true;
-      //           }
-      //       });      
-
-      // this.myform.reset();
+      
 
 
     }
+    // this.myform.reset();
   }
 }

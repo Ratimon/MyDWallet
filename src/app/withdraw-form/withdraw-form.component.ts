@@ -34,11 +34,7 @@ export class WithdrawFormComponent implements OnInit {
     this.etherAmount = new FormControl('', [
       Validators.required
     ]);
-    this.addressTo = new FormControl('', [
-      Validators.required,
-      Validators.minLength(42),
-      Validators.maxLength(42)
-    ]);
+    this.addressTo = new FormControl('', );
   }
 
   createForm() {
@@ -53,10 +49,12 @@ export class WithdrawFormComponent implements OnInit {
       console.log("Form Submitted!");
 
       var that = this;
+      // console.log(that.myform)
       myGlobals.SimpleWallet.deployed().then(function(contract:any) {
 
-      console.log(that.myform.value.etherAmount)
+      console.log(that)
       console.log(that.myform.value.addressTo)
+       console.log(myGlobals.web3.eth.accounts[0])
 
       contract.sendFunds(myGlobals.web3.toWei(that.myform.value.etherAmount, "ether"), that.myform.value.addressTo, {from: myGlobals.web3.eth.accounts[0], gas: 200000}).then(function () {
           that.transfer_success = true;
@@ -68,7 +66,7 @@ export class WithdrawFormComponent implements OnInit {
       });
      });
 
-      this.myform.reset();
+      // this.myform.reset();
     }
   }
 

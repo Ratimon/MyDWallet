@@ -2,7 +2,7 @@
 <div class="row">
     <div class="col-lg-6">
         <h1>Balance</h1>
-        {{ss.balanceInEther}} eth
+        {{ss.balanceInEther | number : '1.2-2'}} eth
 
         <!--<h1>Allowed Accounts</h1>
         <div ng-repeat="account in accounts">

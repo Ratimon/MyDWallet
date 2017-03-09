@@ -1,5 +1,5 @@
  <div *ngIf="transfer_success == false && has_errors.length == 0" >
-  <h1>Deposit {{ss.name}}</h1>
+  <h1>Deposit </h1>
   <form novalidate
         [formGroup]="myform"
         (ngSubmit)="onSubmit()">
@@ -45,7 +45,7 @@
             class="btn btn-primary">Submit
     </button>
 
-    <!--<pre>{{myform.value |json}} {{myform.value.etherAmount}} {{myform.value.addressFrom}}</pre>-->
+    <pre>{{myform.value |json}} {{myform.value.etherAmount}} {{myform.value.addressFrom}}</pre>
   </form>
  </div>
 

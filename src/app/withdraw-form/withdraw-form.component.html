@@ -1,3 +1,4 @@
+ <div *ngIf="transfer_success == false && has_errors.length == 0" >
 <h1>Withdraw</h1>
 <form novalidate
       [formGroup]="myform"
@@ -59,3 +60,11 @@
 
   <pre>{{myform.value | json}}</pre>
 </form>
+</div>
+
+ <div *ngIf="transfer_success == true">
+    <div class="alert alert-success" role="alert">Success</div>
+</div>
+<div *ngIf="has_errors > 0">
+    <div class="alert alert-error" role="alert">{{has_errors}}</div>
+</div>

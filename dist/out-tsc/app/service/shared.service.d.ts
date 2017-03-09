@@ -1,5 +1,4 @@
 export declare class SharedService {
-    name: string;
     accounts: any;
     has_errors: string;
     transfer_success: boolean;

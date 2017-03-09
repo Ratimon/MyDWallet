@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class SharedService {
 
-  name:string="test"
+  // name:string="test"
   accounts:any
   has_errors: string
   transfer_success:boolean
