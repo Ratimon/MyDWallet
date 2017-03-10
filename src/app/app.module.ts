@@ -13,7 +13,8 @@ import { SendetherComponent } from './sendether/sendether.component';
 import { DepositFormComponent } from './deposit-form/deposit-form.component';
 import { WithdrawFormComponent } from './withdraw-form/withdraw-form.component';
 
-import {SharedService} from './service/shared.service'
+import {SharedService} from './service/shared.service';
+import { PermissionComponent } from './permission/permission.component'
 
 
 
@@ -24,7 +25,8 @@ import {SharedService} from './service/shared.service'
     HistoryComponent,
     SendetherComponent,
     DepositFormComponent,
-    WithdrawFormComponent
+    WithdrawFormComponent,
+    PermissionComponent
   ],
   imports: [
     BrowserModule,

@@ -2,6 +2,8 @@ import {Routes} from "@angular/router";
 import {HomeComponent} from "./home/home.component";
 import {HistoryComponent} from "./history/history.component";
 import {SendetherComponent} from "./sendether/sendether.component"
+import {PermissionComponent} from "./permission/permission.component"
+
 
 
 export const routes : Routes = [
@@ -21,5 +23,9 @@ export const routes : Routes = [
         {
         path: 'history',
         component: HistoryComponent
+    },
+        {
+        path: 'permission',
+        component: PermissionComponent
     }
 ];

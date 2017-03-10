@@ -12,7 +12,7 @@
           'has-success': etherAmount.valid && (etherAmount.dirty || etherAmount.touched)
     }">
       <label>Amount of Ether</label>
-      <input  type="number" step="any"
+      <input  type="number" step="0.1" min ="0"
             class="form-control"
             formControlName="etherAmount"
             required>
