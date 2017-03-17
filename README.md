@@ -6,7 +6,7 @@ application up and running.
 
 # The Purpose
 1. To create very simple prototype of decenterised web application and intregrate
-the latest blockchain based framework - truffle version 3 and the frondend one -Angular 2
+the latest blockchain based framework - truffle version 3 and the frontend one -Angular 2
 2. Write and the solidity contracts and their test cases
 
 
@@ -54,6 +54,11 @@ the latest blockchain based framework - truffle version 3 and the frondend one -
     ```
     truffle test
     ```
+*After npm install, It is important to go to
+
+node_modules/ethjs-abi/internals/webpack/webpack.config.js: and node_modules/ethjs-util/internals/webpack/webpack.config.js:
+
+then change from loader: 'json' to loader: 'json-loader'
 
 # Underdevelopment I will fix it (If possible)
 1. User can only run to bundle all of typescript code on developement mode not production mode (You can bundle but it does't work)
